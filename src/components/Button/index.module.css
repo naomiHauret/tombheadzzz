@@ -1,0 +1,45 @@
+.cta {
+  --gradientPos: 0%;
+  --gradientColor1: '';
+  --gradientColor2: '';
+  --gradient: radial-gradient(
+    63.43% 943.62% at 50% 50%,
+    var(--gradientColor1) var(--gradientPos),
+    var(--gradientColor2) 100%
+  );
+  --textShadow: 0px 2px 0px rgba(0, 0, 0, 0.25);
+  --dropShadowColor1: '';
+  --dropShadowColor2: '';
+  text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.25);
+  background-image: var(--gradient);
+  filter: drop-shadow(0px 4px 1px var(--dropShadowColor1)) drop-shadow(0px 4px 15px var(--dropShadowColor2));
+  &::before {
+    --gradientPos: 55%;
+    @apply absolute top-0 left-0 w-full h-full opacity-0;
+    content: ' ';
+    transition: opacity ease-in 340ms;
+    background-image: inherit;
+    z-index: 1;
+  }
+  &:hover::before {
+    @apply opacity-100;
+  }
+  &[disabled] {
+    background-image: none;
+    filter: none;
+  }
+}
+
+.cta--primary {
+  --gradientColor1: #edbaff;
+  --gradientColor2: rgba(237, 186, 255, 0);
+  --dropShadowColor1: #544a64;
+  --dropShadowColor2: rgba(237, 186, 255, 0.25);
+}
+
+.cta--secondary {
+  --gradientColor1: #33ec9e;
+  --gradientColor2: rgba(212, 186, 255, 0);
+  --dropShadowColor1: #37534e;
+  --dropShadowColor2: rgba(42, 225, 159, 0.25);
+}

@@ -1,0 +1,14 @@
+.heading {
+  background: conic-gradient(from 269.98deg at 122.15% 61.61%, #ffffff 0deg, #edbaff 360deg);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.howItWorksPrestyling ol {
+  @apply space-y-6;
+}
+
+.howItWorksPrestyling ol li::before {
+  content: '–';
+  margin-inline-end: 1ch;
+}

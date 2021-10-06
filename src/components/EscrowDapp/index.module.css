@@ -1,0 +1,106 @@
+.card {
+  --minHeight: 11.1111111111rem;
+  min-height: var(--minHeight);
+
+  @media (min-width: 375px) {
+    --width: 20.2777777778rem;
+    min-width: var(--width);
+  }
+
+  @media (--screen-2xs) {
+    --width: 21.6666666667rem;
+  }
+
+  @media (--screen-sm) {
+    --width: 36.66666666rem;
+    --minHeight: 17.2222222222rem;
+    min-width: unset;
+    max-width: var(--width);
+  }
+}
+
+.card--active {
+  box-shadow: inset 4px 4px 4px rgba(255, 255, 255, 0.1);
+  background: radial-gradient(
+    137.73% 353.44% at -34.39% -29.85%,
+    rgba(67, 240, 168, 0.71) 20.44%,
+    rgba(201, 181, 234, 0) 100%
+  );
+  backdrop-filter: blur(20px);
+}
+
+.card--active::after {
+  @apply absolute z-1 border-t-3 border-b-3 border-l-4 border-r-4 border-solid border-transparent top-0 left-0 w-full h-full rounded-2;
+  content: ' ';
+  background: radial-gradient(
+      100% 100% at 50% 0%,
+      rgba(152, 255, 212, 0.76) 0%,
+      rgba(51, 236, 158, 0.49) 44.27%,
+      rgba(9, 36, 25, 0) 69.27%,
+      rgba(17, 249, 151, 0.333333) 75.52%,
+      rgba(106, 181, 149, 0.145833) 89.58%,
+      rgba(61, 103, 86, 0.63) 91.67%,
+      rgba(166, 255, 217, 0.35) 100%
+    )
+    border-box; /*3*/
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+.card::before {
+  @apply absolute z-1 top-0 left-0 w-full h-full;
+  content: ' ';
+  background-image: url('/images/filter_noise.png');
+  background-size: 180px 180px;
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+  opacity: 0.16;
+}
+
+.cardWalletAddress {
+  --maxWidth: 25ch;
+  background: conic-gradient(from -90deg at 100% 50%, #fff 0deg, #a6d8cf 360deg);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  max-width: var(--maxWidth);
+  @media (--screen-xs) {
+    --maxWidth: 32ch;
+  }
+  @media (--screen-sm) {
+    --maxWidth: unset;
+  }
+}
+
+.balance {
+  --maxWidth: 18ch;
+  max-width: var(--maxWidth);
+  @media (--screen-xs) {
+    --maxWidth: 21ch;
+  }
+  @media (--screen-sm) {
+    --maxWidth: 20ch;
+  }
+}
+
+.wrapper::after {
+  @apply z-below absolute top-0 left-0 w-full h-full opacity-0;
+  transition: opacity 650ms ease-in-out;
+  @media (--screen-xs) {
+    content: ' ';
+    background-repeat: no-repeat;
+    background-position: top left, top right;
+    background-size: 35%, 35%;
+    background-image: url('/images/left_hand.png'), url('/images/right_hand.png');
+  }
+  @media (--screen-lg) {
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-size: 40%, 40%;
+  }
+}
+
+.showBackground::after {
+  @apply opacity-100 xs:animate-appear lg:animate-spooky-hands;
+}

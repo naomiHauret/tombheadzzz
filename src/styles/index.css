@@ -1,0 +1,190 @@
+/*
+  font-face rules (custom fonts declarations)
+*/
+@font-face {
+  src: url('/fonts/IBMPlexMono-SemiBold.woff2') format('woff2');
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  src: url('/fonts/IBMPlexMono-Bold.woff2') format('woff2');
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  src: url('/fonts/Orbitron-Bold.woff2') format('woff2');
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* Utilities (Tailwind + other utilities classes)*/
+/*
+  Tailwind classes
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Bases styles (Reset + basic styles)
+*/
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    @apply border-0 box-border;
+  }
+
+  *:focus {
+    @apply outline-none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-size-adjust: 100%;
+    text-rendering: optimizelegibility;
+    scroll-padding-top: var(--headerHeight);
+    @media not all and (min-resolution: 0.001dpcm) {
+      scroll-padding-top: 0;
+    }
+  }
+
+  a {
+    @apply bg-transparent;
+    color: inherit;
+  }
+
+  button {
+    @apply cursor-pointer p-0 normal-case;
+  }
+
+  h1,
+  h2,
+  h3,
+  figure,
+  p,
+  ol {
+    @apply m-0;
+  }
+
+  button,
+  ul {
+    @apply p-0;
+  }
+
+  button::-moz-focus-inner {
+    @apply border-0;
+  }
+
+  img,
+  svg {
+    @apply block;
+  }
+
+  img {
+    @apply max-w-full h-auto;
+  }
+
+  summary {
+    @apply cursor-pointer list-none text-pink-100 text-md focus:underline;
+  }
+
+  summary::-webkit-details-marker {
+    @apply hidden;
+  }
+
+  details summary::after {
+    --rotate: 0;
+    @apply transition-all ease-in transform rotate-0  inline-flex;
+    margin-inline-start: 1ch;
+    display: inline-flex;
+    content: url("data:image/svg+xml,%3Csvg stroke='rgb(237, 186, 255)' fill='none' stroke-width='2' viewBox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' height='1em' width='1em' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  }
+
+  details[open] summary::after {
+    @apply rotate-180;
+  }
+
+  summary {
+    @apply mb-4;
+  }
+}
+
+@keyframes loader-cta {
+  0% {
+    content: '⢄';
+  }
+  16.6666666667% {
+    content: '⢂';
+  }
+  33.3333333334% {
+    content: '⢁';
+  }
+  50% {
+    content: '⡁';
+  }
+  66.6666666668% {
+    content: '⡈';
+  }
+  83.3333333335% {
+    content: '⡐';
+  }
+  100% {
+    content: '⡠';
+  }
+}
+
+@keyframes loader-bars {
+  0% {
+    content: '‎‎‎‎‎▰▱▱▱▱▱▱';
+  }
+  14.2857142857% {
+    content: '▰▰▱▱▱▱▱';
+  }
+  28.5714285714% {
+    content: '▰▰▰▱▱▱▱';
+  }
+  42.8571428571% {
+    content: '▰▰▰▰▱▱▱';
+  }
+  57.1428571428% {
+    content: '▰▰▰▰▰▱▱';
+  }
+  71.4285714285% {
+    content: '▰▰▰▰▰▰▱';
+  }
+  85.7142857142% {
+    content: '▰▰▰▰▰▰▰';
+  }
+  100% {
+    content: '▰▱▱▱▱▱▱';
+  }
+}
+
+.loader::after {
+  content: ' ';
+  font-size: 1.75em;
+  background: radial-gradient(
+    137.73% 353.44% at -34.39% -29.85%,
+    rgba(51, 236, 158, 1) 20.44%,
+    rgba(201, 181, 234, 0) 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: loader-bars 850ms linear infinite;
+}
+
+.loader-cta::before {
+  content: ' ';
+  margin-inline-end: 1ch;
+  animation: loader-cta 850ms linear infinite;
+}

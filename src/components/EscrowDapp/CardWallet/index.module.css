@@ -1,0 +1,24 @@
+.address {
+  --maxWidth: 25ch;
+  background: conic-gradient(from -90deg at 100% 50%, #fff 0deg, #a6d8cf 360deg);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  max-width: var(--maxWidth);
+  @media (--screen-xs) {
+    --maxWidth: 32ch;
+  }
+  @media (--screen-sm) {
+    --maxWidth: unset;
+  }
+}
+
+.balance {
+  --maxWidth: 18ch;
+  max-width: var(--maxWidth);
+  @media (--screen-xs) {
+    --maxWidth: 21ch;
+  }
+  @media (--screen-sm) {
+    --maxWidth: 20ch;
+  }
+}

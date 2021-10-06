@@ -1,0 +1,110 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_key",
+        "type": "uint256"
+      }
+    ],
+    "name": "claim_bid",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "ledger",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "status",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint256",
+        "name": "nft_id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "nft_address",
+        "type": "address"
+      },
+      {
+        "internalType": "address payable",
+        "name": "nft_seller",
+        "type": "address"
+      },
+      {
+        "internalType": "address payable",
+        "name": "nft_buyer",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "weth_expected",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_key",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_nft_id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "_nft_address",
+        "type": "address"
+      },
+      {
+        "internalType": "address payable",
+        "name": "_seller",
+        "type": "address"
+      },
+      {
+        "internalType": "address payable",
+        "name": "_buyer",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_weth_expected",
+        "type": "uint256"
+      }
+    ],
+    "name": "place_bid",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_key",
+        "type": "uint256"
+      }
+    ],
+    "name": "remove_bid",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

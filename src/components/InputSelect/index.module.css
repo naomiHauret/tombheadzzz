@@ -1,0 +1,8 @@
+.select::after {
+  @apply absolute top-1/2 inline-end-2 sm:inline-end-4 transform -translate-y-1/2;
+  content: url("data:image/svg+xml,%3Csvg stroke='rgba(255, 255, 255, 0.5)' fill='none' stroke-width='0' viewBox='0 0 24 24' height='1em' width='1em' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.select:focus-within::after {
+  content: url("data:image/svg+xml,%3Csvg stroke='rgba(255, 255, 255, 1)' fill='none' stroke-width='0' viewBox='0 0 24 24' height='1em' width='1em' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+}

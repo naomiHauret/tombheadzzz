@@ -1,0 +1,8 @@
+.logo {
+  --shadowValue: 0 4px 0;
+  text-shadow: var(--shadowValue) rgba(237, 186, 255, 0.87);
+
+  @media (--screen-xs) {
+    --shadowValue: 0 5px 0;
+  }
+}

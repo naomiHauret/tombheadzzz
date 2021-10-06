@@ -1,0 +1,4 @@
+.loadingIndicator::after {
+  content: ' ';
+  @apply animate-loading;
+}

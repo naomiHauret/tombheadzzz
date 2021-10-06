@@ -1,0 +1,38 @@
+.tabGroup [role='tab']:first-child {
+  @apply rounded-ie-0;
+}
+
+.tabGroup [role='tab']:last-child {
+  @apply rounded-is-0;
+}
+
+@supports not (border-start-end-radius: 0) {
+  [dir='rtl'] .tabGroup [role='tab']:last-child {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  [dir='ltr'] .tabGroup [role='tab']:last-child {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  [dir='rtl'] .tabGroup [role='tab']:first-child {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  [dir='ltr'] .tabGroup [role='tab']:first-child {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+.tabGroup [role='tab']::after {
+  @apply absolute top-0 left-0 w-full h-full bg-neutral-200 z-below;
+  content: ' ';
+}
+
+.tabGroup [role='tab'] {
+  filter: none !important;
+}
